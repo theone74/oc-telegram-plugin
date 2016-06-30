@@ -1,2 +1,13 @@
 1.0.1:
     - Initialize plugin.
+    - builder_table_create_theone74_telegram_user.php
+    - builder_table_create_theone74_telegram_chat.php
+    - builder_table_create_theone74_telegram_user_chat.php
+    - builder_table_create_theone74_telegram_inline_query.php
+    - builder_table_create_theone74_telegram_chosen_inline_result.php
+    - builder_table_create_theone74_telegram_callback_query.php
+    - builder_table_create_theone74_telegram_message.php
+    - builder_table_create_theone74_telegram_edited_message.php
+    - builder_table_create_theone74_telegram_telegram_update.php
+    - builder_table_create_theone74_telegram_conversation.php
+    - builder_table_create_theone74_telegram_botan_shortener.php
