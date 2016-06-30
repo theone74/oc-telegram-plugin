@@ -10,13 +10,14 @@ class BuilderTableCreateTheone74TelegramChat extends Migration
         Schema::create('theone74_telegram_chat', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
+            $table->bigInteger('id');
             $table->enum('type', ['private', 'group', 'supergroup', 'channel']);
             $table->string('title', 255)->default('');
             $table->timestamp('created_at')->nullable()->default(null);
             $table->timestamp('updated_at')->nullable()->default(null);
             $table->string('old_id', 255)->default(null);
 
+            $table->primary('id');
             $table->index(['old_id'], 'old_id');
         });
     }

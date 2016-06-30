@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateTheone74Telegram extends Migration
+class BuilderTableCreateTheone74TelegramUserChat extends Migration
 {
     public function up()
     {

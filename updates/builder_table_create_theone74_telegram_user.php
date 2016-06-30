@@ -10,13 +10,14 @@ class BuilderTableCreateTheone74TelegramUser extends Migration
         Schema::create('theone74_telegram_user', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
+            $table->bigInteger('id');
             $table->string('first_name', 255)->default('');
             $table->string('last_name', 255)->nullable()->default(null);
             $table->string('username', 255)->nullable()->default(null);
             $table->timestamp('created_at')->nullable()->default(null);
             $table->timestamp('updated_at')->nullable()->default(null);
 
+            $table->primary('id');
             $table->index(['username'], 'username');
         });
     }
