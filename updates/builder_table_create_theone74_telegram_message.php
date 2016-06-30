@@ -75,7 +75,7 @@ class BuilderTableCreateTheone74TelegramMessage extends Migration
                 ->references('id')
                 ->on('theone74_telegram_chat');
 
-            $table->foreign(['reply_to_chat', 'reply_to_chat'])
+            $table->foreign(['reply_to_chat', 'reply_to_message'])
                 ->references(['chat_id', 'id'])
                 ->on('theone74_telegram_message');
 
@@ -90,6 +90,6 @@ class BuilderTableCreateTheone74TelegramMessage extends Migration
             $table->foreign('left_chat_member')
                 ->references('id')
                 ->on('theone74_telegram_user');
+        });
     }
-
 }
