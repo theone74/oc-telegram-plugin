@@ -1,0 +1,13 @@
+{
+    "name": "theone74/telegram",
+    "description": "Telegram bot api implementation",
+    "require": {
+        "longman/telegram-bot": "0.33"
+    },
+    "authors": [
+        {
+            "name": "Anton Romanov",
+            "email": "iam@theone74.ru"
+        }
+    ]
+}

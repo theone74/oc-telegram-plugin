@@ -1,0 +1,47 @@
+fields: {  }
+tabs:
+    fields:
+        token:
+            label: 'Bot token'
+            oc.commentPosition: ''
+            span: auto
+            placeholder: '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'
+            disabled: 0
+            required: 1
+            type: text
+            tab: Bot
+        name:
+            label: 'Bot name'
+            oc.commentPosition: ''
+            span: auto
+            required: 1
+            type: text
+            tab: Bot
+        is_webhook:
+            label: 'Use webhook'
+            span: auto
+            default: 1
+            type: checkbox
+            tab: Bot
+        cert_path:
+            label: 'Certificate file path'
+            oc.commentPosition: ''
+            span: auto
+            disabled: 1
+            trigger:
+                action: enable
+                field: is_webhook
+                condition: checked
+            type: text
+            tab: Bot
+
+        admins:
+          label: Admins ids
+          type: repeater
+          tab: Admins
+          span: left
+          form:
+            fields:
+              admin:
+                label: User Id
+                type: dropdown

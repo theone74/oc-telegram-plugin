@@ -1,0 +1,24 @@
+plugin:
+    name: 'theone74.telegram::lang.plugin.name'
+    description: 'theone74.telegram::lang.plugin.description'
+    author: 'Anton R'
+    icon: oc-icon-at
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Telegram
+        url: theone74/telegram/users
+        icon: icon-at
+        sideMenu:
+            side-menu-item:
+                label: Users
+                url: theone74/telegram/users
+                icon: icon-user
+            side-menu-item2:
+                label: Messages
+                url: theone74/telegram/messages
+                icon: icon-file-text
+            side-menu-item3:
+                label: Chat
+                url: theone74/telegram/chats
+                icon: icon-skype

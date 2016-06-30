@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(IFNULL(first_name, ''''), '' '', IFNULL(last_name,''''))'
+    username:
+        label: UserName
+        type: text
+        searchable: true
+        sortable: true

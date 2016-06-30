@@ -1,0 +1,10 @@
+list: $/theone74/telegram/models/chat/columns.yaml
+modelClass: TheOne74\Telegram\Models\Chat
+title: Chats
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
