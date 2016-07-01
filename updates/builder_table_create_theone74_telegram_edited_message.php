@@ -18,7 +18,7 @@ class BuilderTableCreateTheone74TelegramEditedMessage extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('chat_id');
-            $table->bigInteger('message_id');
+            $table->bigInteger('message_id')->unsigned();
             $table->bigInteger('user_id')->nullable();
             $table->dateTime('edit_date')->nullable()->default(null);
             $table->text('text')->nullable()->default(null);

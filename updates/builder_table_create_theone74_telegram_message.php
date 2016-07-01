@@ -79,9 +79,9 @@ class BuilderTableCreateTheone74TelegramMessage extends Migration
                 ->references(['chat_id', 'id'])
                 ->on('theone74_telegram_message');
 
-            $table->foreign('forward_from')
-                ->references('id')
-                ->on('theone74_telegram_user');
+            // $table->foreign('forward_from')
+            //     ->references('id')
+            //     ->on('theone74_telegram_user');
 
             $table->foreign('new_chat_member')
                 ->references('id')
