@@ -1,7 +1,9 @@
-<a href="javascript:;"
+<?php if ($this->user->hasAccess('theone74.telegram.send')): ?>
+    <a href="javascript:;"
         id="sendbtn"
         class="btn btn-default btn-sm"
         data-handler="onLoadSendWindow"
         data-control="popup"
         data-request-data="chat_id: <?= $record->id ?>"
         role="button"><?= trans('theone74.telegram::lang.chats.send_message') ?></a>
+<?php endif; ?>

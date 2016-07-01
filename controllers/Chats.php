@@ -27,6 +27,9 @@ class Chats extends Controller
     }
 
     public function onSend() {
+        if ( ! $this->user->hasPermission('theone74.telegram.send')) {
+            throw new \Exception('No permissions');
+        }
         $chat_id = post('chat_id');
         $text = post('text');
         $telegram = TelegramApi::instance();

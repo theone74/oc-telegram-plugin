@@ -9,16 +9,40 @@ navigation:
         label: 'theone74.telegram::lang.plugin.name'
         url: theone74/telegram/users
         icon: icon-paper-plane
+        permissions:
+            - theone74.telegram.show
         sideMenu:
             side-menu-item:
                 label: 'theone74.telegram::lang.left_menu.users'
                 url: theone74/telegram/users
                 icon: icon-user
+                permissions:
+                    - theone74.telegram.show.users
             side-menu-item2:
                 label: 'theone74.telegram::lang.left_menu.messages'
                 url: theone74/telegram/messages
                 icon: icon-file-text
+                permissions:
+                    - theone74.telegram.show.messages
             side-menu-item3:
                 label: 'theone74.telegram::lang.left_menu.chats'
                 url: theone74/telegram/chats
                 icon: icon-comments
+                permissions:
+                    - theone74.telegram.show.chats
+permissions:
+    theone74.telegram.show.users:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Show users'
+    theone74.telegram.show.chats:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Show chats'
+    theone74.telegram.show.messages:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Show messages'
+    theone74.telegram.show:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Show plugin'
+    theone74.telegram.send:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Send messages'
