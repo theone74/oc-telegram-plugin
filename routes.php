@@ -10,7 +10,7 @@ Route::get('/p', array(function(){
 	//echo ('test');
 
 	try {
-		$telegram = new Telegram('184352179:AAFDdU2iaCc2_W-vxppsgTGqrxc72wtTR7Y', 
+		$telegram = new Telegram('184352179:AAFDdU2iaCc2_W-vxppsgTGqrxc72wtTR7Y',
 			'inf0_bot');
 		$mysql_credentials = [
 			'host'      => '192.168.1.173',
@@ -36,7 +36,7 @@ Route::get('/x', array(function(){
 	try {
 
     $telegram = new TelegramApi(
-			TelegramInfoSettings::instance()->get('token'), 
+			TelegramInfoSettings::instance()->get('token'),
 			TelegramInfoSettings::instance()->get('name')
 		);
 
@@ -78,22 +78,12 @@ Route::post('/telehook/{token}', array(function($token){
 	}
 
 	try {
-    // Create Telegram API object
-    $telegram = new TelegramApi(
-			TelegramInfoSettings::instance()->get('token'), 
-			TelegramInfoSettings::instance()->get('name')
-		);
+        // Create Telegram API object
+        $telegram = TelegramApi::instance();
 
-		$mysql_credentials = [
-			'host'      => Config::get('database.connections.mysql.host'),
-			'database'  => Config::get('database.connections.mysql.database'),
-			'user'  		=> Config::get('database.connections.mysql.username'),
-			'password'  => Config::get('database.connections.mysql.password'),
-		];
-		$telegram->enableMySQL($mysql_credentials, 'theone74_telegram_');
+        // Handle telegram webhook request
+        $telegram->handle();
 
-    // Handle telegram webhook request
-    $telegram->handle();
 	} catch (TelegramException $e) {
 		\Log::error($e);
 	}
