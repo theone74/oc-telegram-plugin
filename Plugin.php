@@ -20,7 +20,7 @@ class Plugin extends PluginBase
                 'class'       => 'TheOne74\Telegram\Models\TelegramInfoSettings',
                 'order'       => 500,
                 'keywords'    => 'telegram bot',
-                // 'permissions' => ['acme.users.access_settings']
+                'permissions' => ['theone74.telegram.settings']
             ]
         ];
     }

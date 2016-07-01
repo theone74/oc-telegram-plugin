@@ -46,3 +46,6 @@ permissions:
     theone74.telegram.send:
         tab: 'theone74.telegram::lang.plugin.name'
         label: 'Send messages'
+    theone74.telegram.settings:
+        tab: 'theone74.telegram::lang.plugin.name'
+        label: 'Manage settings'
