@@ -16,7 +16,7 @@ class Plugin extends PluginBase
                 'label'       => 'theone74.telegram::lang.settings.page_name',
                 'description' => 'theone74.telegram::lang.settings.page_desc',
                 'category'    => 'theone74.telegram::lang.plugin.name',
-                'icon'        => 'oc-icon-at',
+                'icon'        => 'icon-paper-plane',
                 'class'       => 'TheOne74\Telegram\Models\TelegramInfoSettings',
                 'order'       => 500,
                 'keywords'    => 'telegram bot',

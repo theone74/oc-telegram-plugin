@@ -35,16 +35,16 @@ class RegisterWidgets {
             // 'required',
             // 'defaultFrom',
             // 'dependsOn',
-            // 'trigger', 
+            // 'trigger',
             // 'preset',
             // 'attributes'
         ];
 
-        $this->controlLibrary->registerControl('telechat', 
+        $this->controlLibrary->registerControl('telechat',
             'Telegram Chat',
             'Renders a chat selector field.',
             ControlLibrary::GROUP_WIDGETS,
-            'icon-server',
+            'icon-paper-plane-o',
             $this->controlLibrary->getStandardProperties($ignoreProperties, $properties),
             'TheOne74\Telegram\Classes\WidgetDesignTimeProvider'
         );
