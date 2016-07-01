@@ -30,14 +30,15 @@ class TelegramChat extends FormWidgetBase
         $res = [];
         $chats = Chat::all();
         foreach ($chats as $k => $v) {
-            switch ($v->type) {
-                case 'private':
-                    $res[$v->id] = sprintf('"%s" private chat', $v->user[0]->username);
-                    break;
-                case 'group':
-                    $res[$v->id] = sprintf('"%s" group chat', $v->title);
-                    break;
-            }
+            $res[$v->id] = $v->listTitle;
+            // switch ($v->type) {
+            //     case 'private':
+            //         $res[$v->id] = sprintf('"%s" private chat', $v->user[0]->username);
+            //         break;
+            //     case 'group':
+            //         $res[$v->id] = sprintf('"%s" group chat', $v->title);
+            //         break;
+            // }
         }
         $this->vars['fieldOptions'] = $res;
     }

@@ -30,9 +30,21 @@ class Chat extends Model
         'user' => [
             'TheOne74\Telegram\Models\User',
             'table'    => 'theone74_telegram_user_chat',
-            // 'key'      => 'my_user_id',
-            // 'otherKey' => 'my_role_id'
         ]
     ];
+
+    function getListTitleAttribute() {
+
+        switch ($this->type) {
+            case 'private':
+                return sprintf('"%s" private chat', $this->user[0]->username);
+                break;
+            case 'group':
+                return sprintf('"%s" group chat', $this->title);
+                break;
+        }
+
+        return '';
+    }
 
 }

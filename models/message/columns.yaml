@@ -4,24 +4,6 @@ columns:
         type: number
         searchable: true
         sortable: true
-    chat_id:
-        label: 'Chat ID'
-        type: number
-        searchable: true
-        sortable: true
-    user_id:
-        label: 'User ID'
-        type: number
-        searchable: true
-        sortable: true
-    date:
-        label: Date
-        type: number
-        sortable: true
-    text:
-        label: Text
-        type: text
-        searchable: true
     username:
         label: UserName
         type: text
@@ -34,4 +16,12 @@ columns:
         type: text
         searchable: false
         relation: chat
-        valueFrom: id
+        valueFrom: listTitle
+    text:
+        label: Text
+        type: text
+        searchable: true
+    date:
+        label: Date
+        type: number
+        sortable: true
