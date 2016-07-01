@@ -17,11 +17,11 @@ class BuilderTableCreateTheone74TelegramTelegramUpdate extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('chat_id')->nullable()->default(null);
-            $table->bigInteger('message_id')->unsigned()->default(null);
-            $table->bigInteger('inline_query_id')->unsigned()->default(null);
-            $table->bigInteger('chosen_inline_result_id')->unsigned()->default(null);
-            $table->bigInteger('callback_query_id')->unsigned()->default(null);
-            $table->bigInteger('edited_message_id')->unsigned()->default(null);
+            $table->bigInteger('message_id')->unsigned()->nullable()->default(null);
+            $table->bigInteger('inline_query_id')->unsigned()->nullable()->default(null);
+            $table->bigInteger('chosen_inline_result_id')->unsigned()->nullable()->default(null);
+            $table->bigInteger('callback_query_id')->unsigned()->nullable()->default(null);
+            $table->bigInteger('edited_message_id')->unsigned()->nullable()->default(null);
 
             $table->index(['chat_id', 'message_id'], 'message_id');
             $table->index(['inline_query_id'], 'inline_query_id');
