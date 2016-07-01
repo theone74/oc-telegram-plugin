@@ -1,10 +1,15 @@
 <?php namespace TheOne74\Telegram\Classes;
 
-class TelegramApi 
-extends \Longman\TelegramBot\Telegram 
+use \TheOne74\Telegram\Models\TelegramInfoSettings;
+use \Longman\TelegramBot\Exception\TelegramException;
+
+class TelegramApi
+extends \Longman\TelegramBot\Telegram
 {
 
-	public function __construct($api_key, $bot_name) 
+    public static $_instance;
+
+	public function __construct($api_key, $bot_name)
 	{
 		parent::__construct($api_key, $bot_name);
 		$this->addCommandsPathMy(plugins_path('theone74/telegram/commands'), true);
@@ -42,5 +47,35 @@ extends \Longman\TelegramBot\Telegram
 
 			return null;
 	}
+
+    public static function instance(){
+
+        if ( ! self::$_instance) {
+            if ( ! TelegramInfoSettings::instance()->get('token')) {
+                throw new \Exception('Token not set');
+            }
+
+            if ( ! TelegramInfoSettings::instance()->get('name')) {
+                throw new \Exception('Bot name not set');
+            }
+
+            self::$_instance = new TelegramApi(
+                TelegramInfoSettings::instance()->get('token'),
+                TelegramInfoSettings::instance()->get('name')
+            );
+
+            $mysql_credentials = [
+                'host'      => \Config::get('database.connections.mysql.host'),
+                'database'  => \Config::get('database.connections.mysql.database'),
+                'user'  	=> \Config::get('database.connections.mysql.username'),
+                'password'  => \Config::get('database.connections.mysql.password'),
+            ];
+            // TODO
+            self::$_instance->enableMySQL($mysql_credentials, 'theone74_telegram_');
+        }
+
+        return self::$_instance;
+
+    }
 
 }

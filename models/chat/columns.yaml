@@ -19,3 +19,8 @@ columns:
         type: text
         relation: user
         valueFrom: username
+    control:
+        type: partial
+        cssClass: column-button nolink
+
+
