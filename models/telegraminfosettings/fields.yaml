@@ -2,29 +2,29 @@ fields: {  }
 tabs:
     fields:
         token:
-            label: 'Bot token'
+            label: 'theone74.telegram::lang.settings.bot_token'
             oc.commentPosition: ''
             span: auto
             placeholder: '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'
             disabled: 0
             required: 1
             type: text
-            tab: Bot
+            tab: 'theone74.telegram::lang.settings.bot_tab'
         name:
-            label: 'Bot name'
+            label: 'theone74.telegram::lang.settings.bot_name'
             oc.commentPosition: ''
             span: auto
             required: 1
             type: text
-            tab: Bot
+            tab: 'theone74.telegram::lang.settings.bot_tab'
         is_webhook:
-            label: 'Use webhook'
+            label: 'theone74.telegram::lang.settings.use_webhook'
             span: auto
             default: 1
             type: checkbox
-            tab: Bot
+            tab: 'theone74.telegram::lang.settings.bot_tab'
         cert_path:
-            label: 'Certificate file path'
+            label: 'theone74.telegram::lang.settings.cert_path'
             oc.commentPosition: ''
             span: auto
             disabled: 1
@@ -33,15 +33,16 @@ tabs:
                 field: is_webhook
                 condition: checked
             type: text
-            tab: Bot
+            tab: 'theone74.telegram::lang.settings.bot_tab'
 
         admins:
-          label: Admins ids
+          label: 'theone74.telegram::lang.settings.admins_ids'
           type: repeater
-          tab: Admins
+          tab: 'theone74.telegram::lang.settings.admin_tab'
           span: left
+          prompt: 'theone74.telegram::lang.settings.add_new_admin'
           form:
             fields:
               admin:
-                label: User Id
+                label: 'theone74.telegram::lang.settings.user_id'
                 type: dropdown

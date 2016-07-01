@@ -1,17 +1,17 @@
 columns:
     id:
-        label: ID
+        label: 'theone74.telegram::lang.lists.id'
         type: number
         searchable: true
         sortable: true
     name:
-        label: Name
+        label: 'theone74.telegram::lang.lists.name'
         type: text
         searchable: true
         sortable: true
         select: 'concat(IFNULL(first_name, ''''), '' '', IFNULL(last_name,''''))'
     username:
-        label: UserName
+        label: 'theone74.telegram::lang.lists.username'
         type: text
         searchable: true
         sortable: true

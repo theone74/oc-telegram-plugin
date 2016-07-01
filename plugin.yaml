@@ -6,19 +6,19 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Telegram
+        label: 'theone74.telegram::lang.plugin.name'
         url: theone74/telegram/users
         icon: icon-paper-plane
         sideMenu:
             side-menu-item:
-                label: Users
+                label: 'theone74.telegram::lang.left_menu.users'
                 url: theone74/telegram/users
                 icon: icon-user
             side-menu-item2:
-                label: Messages
+                label: 'theone74.telegram::lang.left_menu.messages'
                 url: theone74/telegram/messages
                 icon: icon-file-text
             side-menu-item3:
-                label: Chat
+                label: 'theone74.telegram::lang.left_menu.chats'
                 url: theone74/telegram/chats
                 icon: icon-comments

@@ -78,4 +78,8 @@ extends \Longman\TelegramBot\Telegram
 
     }
 
+    public function sendMessage(array $data) {
+        return Request::sendMessage($data);
+    }
+
 }

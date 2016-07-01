@@ -3,15 +3,15 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Send message?</h4>
+            <h4 class="modal-title"><?= trans('theone74.telegram::lang.send_msg_wnd.caption') ?></h4>
         </div>
         <div class="modal-body">
-            <textarea name="text" class="sendtext" cols="77" rows="5" placeholder="Enter message text..."></textarea>
+            <textarea name="text" class="sendtext" cols="77" rows="5" placeholder="<?= trans('theone74.telegram::lang.send_msg_wnd.placeholder') ?>"></textarea>
             <input type="hidden" name="chat_id" class="chat_id" value="<?= $chat_id ?>">
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-            <button type="button" class="send btn btn-primary">Отправить</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><?= trans('theone74.telegram::lang.send_msg_wnd.cancel') ?></button>
+            <button type="button" class="send btn btn-primary"><?= trans('theone74.telegram::lang.send_msg_wnd.ok') ?></button>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
 <script>
     $('button.send').click(function(e){
         $.request('onSend', {
-            confirm: 'Are you sure?',
+            confirm: '<?= trans('theone74.telegram::lang.send_msg_wnd.confirm') ?>',
             data: {
                 chat_id: $('input.chat_id').val(),
                 text: $('textarea.sendtext').val(),

@@ -1,27 +1,25 @@
 columns:
     id:
-        label: ID
+        label: 'theone74.telegram::lang.lists.id'
         type: number
         searchable: true
         sortable: true
     username:
-        label: UserName
+        label: 'theone74.telegram::lang.lists.username'
         type: text
         searchable: true
-        sortable: false
         relation: user
         valueFrom: username
     chat:
-        label: Chat
+        label: 'theone74.telegram::lang.lists.chat'
         type: text
-        searchable: false
         relation: chat
         valueFrom: listTitle
     text:
-        label: Text
+        label: 'theone74.telegram::lang.lists.text'
         type: text
         searchable: true
     date:
-        label: Date
+        label: 'theone74.telegram::lang.lists.date'
         type: number
         sortable: true

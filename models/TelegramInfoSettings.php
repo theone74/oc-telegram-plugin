@@ -16,24 +16,24 @@ use TheOne74\Telegram\Models\User;
 class TelegramInfoSettings extends Model
 {
 	use \October\Rain\Database\Traits\Validation;
-	
+
 	public $implement = ['System.Behaviors.SettingsModel'];
-	
+
 	// 	A unique code
-		public $settingsCode = 'theone74_telegramm_info';
-	
+	public $settingsCode = 'theone74_telegramm_info';
+
 	// 	Reference to field configuration
-			public $settingsFields = 'fields.yaml';
-	
+	public $settingsFields = 'fields.yaml';
+
 	public $rules = [
         'name'       => 'required|between:1,16',
         'is_webhook' => 'required|boolean',
         'cert_path'  => 'required|string',
         'token'      => 'required|regex:/^[0-9]+:[a-z0-9\-_]+$/i'
     ];
-	
+
 	public $customMessages = [];
-	
+
 	function unparse_url($parsed_url) {
 		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
 		$host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
@@ -46,16 +46,16 @@ class TelegramInfoSettings extends Model
 		$fragment = isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '';
 		return "$scheme$user$pass$host$port$path$query$fragment";
 	}
-	
+
 	function afterSave() {
-		
+
 		$url = parse_url(Config::get('app.url'));
 		$url['scheme'] = 'https';
 		$url['path'] = '/telehook/'.$this->get('token');
 		$url = $this->unparse_url($url);
-		
+
 		$telegram = new TelegramApi($this->get('token'), $this->get('name'));
-		
+
 		if ($this->get('is_webhook')) {
 			$result = $telegram->setWebHook($url, $this->get('cert_path'));
 			if ($result->isOk()) {
@@ -69,7 +69,7 @@ class TelegramInfoSettings extends Model
 			}
 		}
 	}
-	
+
 	public function beforeValidate()
 	{
 		$this->rules['admins'] = 'required';
@@ -79,7 +79,7 @@ class TelegramInfoSettings extends Model
 			$this->customMessages['admins.'.$index.'.admin.integer'] = 'Admin number '.$index.' needs to be a integer.';
 		}
 	}
-	
+
     public function getAdminOptions()
     {
         User::all()->lists('username', 'id');

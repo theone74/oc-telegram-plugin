@@ -13,9 +13,9 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'Bot Settings',
-                'description' => 'Manage bot settings.',
-                'category'    => 'Telegram',
+                'label'       => 'theone74.telegram::lang.settings.page_name',
+                'description' => 'theone74.telegram::lang.settings.page_desc',
+                'category'    => 'theone74.telegram::lang.plugin.name',
                 'icon'        => 'oc-icon-at',
                 'class'       => 'TheOne74\Telegram\Models\TelegramInfoSettings',
                 'order'       => 500,

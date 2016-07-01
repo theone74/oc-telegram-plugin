@@ -1,26 +1,25 @@
 columns:
     id:
-        label: ID
+        label: 'theone74.telegram::lang.lists.id'
         type: number
         searchable: true
         sortable: true
     type:
-        label: Type
+        label: 'theone74.telegram::lang.lists.type'
         type: text
         searchable: true
         sortable: true
     title:
-        label: Title
+        label: 'theone74.telegram::lang.lists.title'
         type: text
         searchable: true
         sortable: true
     username:
-        label: User
+        label: 'theone74.telegram::lang.lists.username'
         type: text
         relation: user
         valueFrom: username
     control:
+        label: 'theone74.telegram::lang.lists.control'
         type: partial
-        cssClass: column-button nolink
-
-
+        cssClass: 'column-button nolink'
