@@ -72,7 +72,7 @@ class TelegramInfoSettings extends Model
 
 	public function beforeValidate()
 	{
-		$this->rules['admins'] = 'required';
+		// $this->rules['admins'] = 'required';
 		// 		if you want the repeater to have at least one productItem
 		foreach ($this->admins as $index => $Item) {
 			$this->rules['admins.'.$index.'.admin'] = 'integer';
