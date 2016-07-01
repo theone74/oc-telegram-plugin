@@ -2,13 +2,13 @@ plugin:
     name: 'theone74.telegram::lang.plugin.name'
     description: 'theone74.telegram::lang.plugin.description'
     author: 'Anton R'
-    icon: oc-icon-at
+    icon: icon-paper-plane-o
     homepage: ''
 navigation:
     main-menu-item:
         label: Telegram
         url: theone74/telegram/users
-        icon: icon-at
+        icon: icon-paper-plane
         sideMenu:
             side-menu-item:
                 label: Users
@@ -21,4 +21,4 @@ navigation:
             side-menu-item3:
                 label: Chat
                 url: theone74/telegram/chats
-                icon: icon-skype
+                icon: icon-comments
