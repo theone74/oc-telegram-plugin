@@ -12,7 +12,7 @@ class BuilderTableCreateTheone74TelegramTelegramUpdate extends Migration
 
     public function up()
     {
-        Schema::table('theone74_telegram_telegram_update', function($table)
+        Schema::create('theone74_telegram_telegram_update', function($table)
         {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id')->unsigned();
@@ -37,7 +37,7 @@ class BuilderTableCreateTheone74TelegramTelegramUpdate extends Migration
                 ->references('id')
                 ->on('theone74_telegram_inline_query');
 
-            $table->foreign('chosen_inline_result_id')
+            $table->foreign('chosen_inline_result_id', 'chosen_inline_result_id')
                 ->references('id')
                 ->on('theone74_telegram_chosen_inline_result');
 

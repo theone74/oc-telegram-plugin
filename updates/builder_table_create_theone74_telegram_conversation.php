@@ -15,7 +15,7 @@ class BuilderTableCreateTheone74TelegramConversation extends Migration
             $table->bigInteger('chat_id')->nullable()->default(null);
             $table->enum('status', ['active', 'cancelled', 'stopped'])->default('active');
             $table->string('command', 160)->default('');
-            $table->text('notes')->default('NULL');
+            $table->string('notes', 1000)->default('NULL');
             $table->timestamp('created_at')->nullable()->default(null);
             $table->timestamp('updated_at')->nullable()->default(null);
 

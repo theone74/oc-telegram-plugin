@@ -12,7 +12,7 @@ class BuilderTableCreateTheone74TelegramBotanShortener extends Migration
 
     public function up()
     {
-        Schema::table('theone74_telegram_botan_shortener', function($table)
+        Schema::create('theone74_telegram_botan_shortener', function($table)
         {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id')->unsigned();
