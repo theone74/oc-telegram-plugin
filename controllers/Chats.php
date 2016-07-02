@@ -34,6 +34,9 @@ class Chats extends Controller
         $text = post('text');
         $telegram = TelegramApi::instance();
         $result = Request::sendMessage(['chat_id' => $chat_id, 'text' => $text]);
-        return $result->getResult()->getMessageId();
+        if ($result->isOk()) {
+            \Flash::success($result->getDescription());
+        }
+        return ;// $result->getResult()->getMessageId();
     }
 }
