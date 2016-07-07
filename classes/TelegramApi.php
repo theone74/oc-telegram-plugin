@@ -2,6 +2,7 @@
 
 use \TheOne74\Telegram\Models\TelegramInfoSettings;
 use \Longman\TelegramBot\Exception\TelegramException;
+use \Longman\TelegramBot\Request;
 
 class TelegramApi
 extends \Longman\TelegramBot\Telegram
