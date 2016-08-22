@@ -21,42 +21,42 @@ extends \Longman\TelegramBot\Telegram
 
 	public function addCommandsPathMy($path, $namespace, $before = true)
 	{
-			if (!is_dir($path)) {
-					throw new TelegramException('Commands path "' . $path . '" does not exist!');
+		if (!is_dir($path)) {
+			throw new TelegramException('Commands path "' . $path . '" does not exist!');
+		}
+		if (!in_array($path, $this->commands_paths)) {
+			if ($before) {
+				array_unshift($this->commands_paths, $path);
+			} else {
+				array_push($this->commands_paths, $path);
 			}
-			if (!in_array($path, $this->commands_paths)) {
-					if ($before) {
-							array_unshift($this->commands_paths, $path);
-					} else {
-							array_push($this->commands_paths, $path);
-					}
+		}
+		if (!in_array($namespace, $this->commands_namespaces)) {
+			if ($before) {
+				array_unshift($this->commands_namespaces, $namespace);
+			} else {
+				array_push($this->commands_namespaces, $namespace);
 			}
-			if (!in_array($namespace, $this->commands_namespaces)) {
-					if ($before) {
-							array_unshift($this->commands_namespaces, $namespace);
-					} else {
-							array_push($this->commands_namespaces, $namespace);
-					}
-			}
-			return $this;
+		}
+		return $this;
 	}
 
 	public function getCommandObject($command)
 	{
-			$which = ['System'];
-			($this->isAdmin()) && $which[] = 'Admin';
-			$which[] = 'User';
+		$which = ['System'];
+		($this->isAdmin()) && $which[] = 'Admin';
+		$which[] = 'User';
 
-			foreach ($this->commands_namespaces as $namespace) {
-				foreach ($which as $auth) {
-						$command_namespace = $namespace . '\\' . $auth . 'Commands\\' . $this->ucfirstUnicode($command) . 'Command';
-						if (class_exists($command_namespace)) {
-								return new $command_namespace($this, $this->update);
-						}
+		foreach ($this->commands_namespaces as $namespace) {
+			foreach ($which as $auth) {
+				$command_namespace = $namespace . '\\' . $auth . 'Commands\\' . $this->ucfirstUnicode($command) . 'Command';
+				if (class_exists($command_namespace)) {
+					return new $command_namespace($this, $this->update);
 				}
 			}
+		}
 
-			return null;
+		return null;
 	}
 
     public static function instance(){
