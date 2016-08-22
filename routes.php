@@ -81,8 +81,12 @@ Route::post('/telehook/{token}', array(function($token){
         // Create Telegram API object
         $telegram = TelegramApi::instance();
 
+		Event::fire('telegram.beforeReceive', []);
+
         // Handle telegram webhook request
         $telegram->handle();
+
+		Event::fire('telegram.afterReceive', []);
 
 	} catch (TelegramException $e) {
 		\Log::error($e);
