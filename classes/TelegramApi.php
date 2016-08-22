@@ -9,16 +9,17 @@ extends \Longman\TelegramBot\Telegram
 {
 
     public static $_instance;
+	protected $commands_namespaces = [];
 
 	public function __construct($api_key, $bot_name)
 	{
 		parent::__construct($api_key, $bot_name);
-		$this->addCommandsPathMy(plugins_path('theone74/telegram/commands'), true);
+		$this->addCommandsPathMy(plugins_path('theone74/telegram/commands'), 'TheOne74\\Telegram\\Commands');
 	}
 
 	public function addCommandsPath($path, $before = true) {/* dummy */}
 
-	public function addCommandsPathMy($path, $before = true)
+	public function addCommandsPathMy($path, $namespace, $before = true)
 	{
 			if (!is_dir($path)) {
 					throw new TelegramException('Commands path "' . $path . '" does not exist!');
@@ -30,6 +31,13 @@ extends \Longman\TelegramBot\Telegram
 							array_push($this->commands_paths, $path);
 					}
 			}
+			if (!in_array($namespace, $this->commands_namespaces)) {
+					if ($before) {
+							array_unshift($this->commands_namespaces, $namespace);
+					} else {
+							array_push($this->commands_namespaces, $namespace);
+					}
+			}
 			return $this;
 	}
 
@@ -39,11 +47,13 @@ extends \Longman\TelegramBot\Telegram
 			($this->isAdmin()) && $which[] = 'Admin';
 			$which[] = 'User';
 
-			foreach ($which as $auth) {
-					$command_namespace = 'TheOne74\\Telegram\\Commands\\' . $auth . 'Commands\\' . $this->ucfirstUnicode($command) . 'Command';
-					if (class_exists($command_namespace)) {
-							return new $command_namespace($this, $this->update);
-					}
+			foreach ($this->commands_namespaces as $namespace) {
+				foreach ($which as $auth) {
+						$command_namespace = $namespace . '\\' . $auth . 'Commands\\' . $this->ucfirstUnicode($command) . 'Command';
+						if (class_exists($command_namespace)) {
+								return new $command_namespace($this, $this->update);
+						}
+				}
 			}
 
 			return null;
