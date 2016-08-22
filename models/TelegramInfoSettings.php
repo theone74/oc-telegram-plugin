@@ -20,7 +20,7 @@ class TelegramInfoSettings extends Model
 	public $implement = ['System.Behaviors.SettingsModel'];
 
 	// 	A unique code
-	public $settingsCode = 'theone74_telegramm_info';
+	public $settingsCode = 'theone74_telegram_info';
 
 	// 	Reference to field configuration
 	public $settingsFields = 'fields.yaml';

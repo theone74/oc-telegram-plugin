@@ -27,11 +27,10 @@ tabs:
             label: 'theone74.telegram::lang.settings.cert_path'
             oc.commentPosition: ''
             span: auto
-            disabled: 1
             trigger:
-                action: enable
+                action: disable
                 field: is_webhook
-                condition: checked
+                condition: unchecked
             type: text
             tab: 'theone74.telegram::lang.settings.bot_tab'
 
