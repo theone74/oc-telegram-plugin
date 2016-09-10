@@ -28,7 +28,8 @@ class TelegramInfoSettings extends Model
 	public $rules = [
         'name'       => 'required|between:1,16',
         'is_webhook' => 'required|boolean',
-        'cert_path'  => 'required|string',
+		'is_selfsigned' => 'required_with:is_webhook|boolean',
+        'cert_path'  => 'required_with_all:is_webhook,is_selfsigned|string',
         'token'      => 'required|regex:/^[0-9]+:[a-z0-9\-_]+$/i'
     ];
 
@@ -57,7 +58,12 @@ class TelegramInfoSettings extends Model
 		$telegram = new TelegramApi($this->get('token'), $this->get('name'));
 
 		if ($this->get('is_webhook')) {
-			$result = $telegram->setWebHook($url, $this->get('cert_path'));
+			if ($this->get('is_selfsigned')) {
+				$result = $telegram->setWebHook($url, $this->get('cert_path'));
+			}
+			else {
+				$result = $telegram->setWebHook($url);
+			}
 			if ($result->isOk()) {
 				Flash::success($result->getDescription());
 			}

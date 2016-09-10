@@ -19,17 +19,27 @@ tabs:
             tab: 'theone74.telegram::lang.settings.bot_tab'
         is_webhook:
             label: 'theone74.telegram::lang.settings.use_webhook'
-            span: auto
+            span: left
             default: 1
+            type: checkbox
+            tab: 'theone74.telegram::lang.settings.bot_tab'
+        is_selfsigned:
+            label: 'theone74.telegram::lang.settings.is_selfsigned'
+            span: right
+            trigger:
+                action: disable
+                field: is_webhook
+                condition: unchecked
+            default: 0
             type: checkbox
             tab: 'theone74.telegram::lang.settings.bot_tab'
         cert_path:
             label: 'theone74.telegram::lang.settings.cert_path'
             oc.commentPosition: ''
-            span: auto
+            span: right
             trigger:
                 action: disable
-                field: is_webhook
+                field: is_selfsigned
                 condition: unchecked
             type: text
             tab: 'theone74.telegram::lang.settings.bot_tab'
@@ -44,4 +54,4 @@ tabs:
             fields:
               admin:
                 label: 'theone74.telegram::lang.settings.user_id'
-                type: dropdown
+                type: dropdown 
