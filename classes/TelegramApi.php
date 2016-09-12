@@ -9,6 +9,7 @@ extends \Longman\TelegramBot\Telegram
 {
 
     public static $_instance;
+	public static $_encoding = 'utf8mb4';
 	protected $commands_namespaces = [];
 
 	public function __construct($api_key, $bot_name)
@@ -82,12 +83,16 @@ extends \Longman\TelegramBot\Telegram
                 'password'  => \Config::get('database.connections.mysql.password'),
             ];
             // TODO
-            self::$_instance->enableMySQL($mysql_credentials, 'theone74_telegram_');
+            self::$_instance->enableMySQL($mysql_credentials, 'theone74_telegram_', self::$_encoding);
         }
 
         return self::$_instance;
 
     }
+
+	public static function setDbEncoding($encoding) {
+		self::$_encoding = $encoding;
+	}
 
     public function sendMessage(array $data) {
         return Request::sendMessage($data);

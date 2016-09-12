@@ -78,6 +78,8 @@ Route::post('/telehook/{token}', array(function($token){
 	}
 
 	try {
+		Event::fire('telegram.init', []);
+
         // Create Telegram API object
         $telegram = TelegramApi::instance();
 
