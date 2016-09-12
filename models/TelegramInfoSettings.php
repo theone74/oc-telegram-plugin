@@ -42,7 +42,7 @@ class TelegramInfoSettings extends Model
 		$user     = isset($parsed_url['user']) ? $parsed_url['user'] : '';
 		$pass     = isset($parsed_url['pass']) ? ':' . $parsed_url['pass']  : '';
 		$pass     = ($user || $pass) ? "$pass@" : '';
-		$path     = isset($parsed_url['path']) ? $parsed_url['path'] : '';
+		$path     = isset($parsed_url['path']) ? str_replace('//', '/', $parsed_url['path']) : '';
 		$query    = isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '';
 		$fragment = isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '';
 		return "$scheme$user$pass$host$port$path$query$fragment";
@@ -52,7 +52,7 @@ class TelegramInfoSettings extends Model
 
 		$url = parse_url(Config::get('app.url'));
 		$url['scheme'] = 'https';
-		$url['path'] = '/telehook/'.$this->get('token');
+		$url['path'] .= '/telehook/'.$this->get('token');
 		$url = $this->unparse_url($url);
 
 		$telegram = new TelegramApi($this->get('token'), $this->get('name'));
