@@ -84,6 +84,12 @@ extends \Longman\TelegramBot\Telegram
             ];
             // TODO
             self::$_instance->enableMySQL($mysql_credentials, 'theone74_telegram_', self::$_encoding);
+
+			$admins = [];
+			foreach(TelegramInfoSettings::instance()->get('admins') as $i) {
+				$admins[] = $i['admin'];
+			}
+			self::$_instance->enableAdmins($admins);
         }
 
         return self::$_instance;
