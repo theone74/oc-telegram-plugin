@@ -4,6 +4,7 @@ title: Chats
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
+recordsPerPage: 15
 toolbar:
     buttons: list_toolbar
     search:

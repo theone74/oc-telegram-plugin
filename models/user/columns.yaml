@@ -13,5 +13,5 @@ columns:
     username:
         label: 'theone74.telegram::lang.lists.username'
         type: text
-        searchable: true
-        sortable: true
+        searchable: false
+        sortable: false

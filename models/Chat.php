@@ -37,7 +37,7 @@ class Chat extends Model
 
         switch ($this->type) {
             case 'private':
-                return sprintf('"%s" private chat', $this->user[0]->username);
+                return sprintf('"%s" private chat', $this->user[0]->username_str);
                 break;
             case 'group':
                 return sprintf('"%s" group chat', $this->title);

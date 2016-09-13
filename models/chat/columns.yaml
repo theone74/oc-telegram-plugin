@@ -14,11 +14,11 @@ columns:
         type: text
         searchable: true
         sortable: true
-    username:
+    username_str:
         label: 'theone74.telegram::lang.lists.username'
         type: text
         relation: user
-        valueFrom: username
+        valueFrom: username_str
     control:
         label: 'theone74.telegram::lang.lists.control'
         type: partial

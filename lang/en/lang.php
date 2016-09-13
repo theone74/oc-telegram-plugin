@@ -11,7 +11,7 @@
     'lists' => [
         'id' => 'ID',
         'type' => 'Type',
-        'title' => 'Title',
+        'title' => 'Group title',
         'username' => 'Username',
         'control' => '',
         'name' => 'Name',
