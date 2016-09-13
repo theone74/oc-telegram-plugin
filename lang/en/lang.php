@@ -44,6 +44,9 @@
         'admin_tab' => 'Admins',
         'admins_ids' => 'Admins',
         'user_id' => 'Admin',
-        'add_new_admin' => 'Add new admin'
+        'add_new_admin' => 'Add new admin',
+        'db_encoding' => 'Db encoding',
+        'db_encoding_utf8' => 'utf8 (Default)',
+        'db_encoding_utf8mb4' => 'utf8mb4',
     ]
 ];

@@ -43,6 +43,15 @@ tabs:
                 condition: unchecked
             type: text
             tab: 'theone74.telegram::lang.settings.bot_tab'
+        db_encoding:
+            label: 'theone74.telegram::lang.settings.db_encoding'
+            type: dropdown
+            default: utf8
+            span: left
+            options:
+                utf8: 'theone74.telegram::lang.settings.db_encoding_utf8'
+                utf8mb4: 'theone74.telegram::lang.settings.db_encoding_utf8mb4'
+            tab: 'theone74.telegram::lang.settings.bot_tab'
 
         admins:
           label: 'theone74.telegram::lang.settings.admins_ids'

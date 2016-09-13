@@ -9,13 +9,16 @@ extends \Longman\TelegramBot\Telegram
 {
 
     public static $_instance;
-	public static $_encoding = 'utf8mb4';
+	public static $_encoding = 'utf8';
 	protected $commands_namespaces = [];
 
 	public function __construct($api_key, $bot_name)
 	{
 		parent::__construct($api_key, $bot_name);
 		$this->addCommandsPathMy(plugins_path('theone74/telegram/commands'), 'TheOne74\\Telegram\\Commands');
+		if ((TelegramInfoSettings::instance()->get('db_encoding'))) {
+			self::$_encoding = TelegramInfoSettings::instance()->get('db_encoding');
+		}
 	}
 
 	public function addCommandsPath($path, $before = true) {/* dummy */}
