@@ -6,6 +6,7 @@ use BackendMenu;
 class Users extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController'];
+	public $requiredPermissions = ['theone74.telegram.show.users'];
     
     public $listConfig = 'config_list.yaml';
 

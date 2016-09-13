@@ -10,6 +10,7 @@ use \TheOne74\Telegram\Models\TelegramInfoSettings;
 class Chats extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController'];
+	public $requiredPermissions = ['theone74.telegram.show.chats'];
 
     public $listConfig = 'config_list.yaml';
 

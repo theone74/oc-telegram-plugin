@@ -6,6 +6,7 @@ use BackendMenu;
 class Messages extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController'];
+	public $requiredPermissions = ['theone74.telegram.show.messages'];
     
     public $listConfig = 'config_list.yaml';
 
