@@ -9,7 +9,7 @@ columns:
         type: text
         searchable: true
         relation: user
-        valueFrom: username
+        valueFrom: username_str
     chat:
         label: 'theone74.telegram::lang.lists.chat'
         type: text
