@@ -17,7 +17,10 @@
         'name' => 'Name',
         'chat' => 'Chat',
         'text' => 'Text',
-        'date' => 'Date'
+        'date' => 'Date',
+		'created_at' => 'Created at',
+		'updated_at' => 'Updated at',
+
     ],
     'chats' => [
         'send_message' => 'Send message',

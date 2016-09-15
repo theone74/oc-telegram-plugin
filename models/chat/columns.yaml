@@ -19,7 +19,22 @@ columns:
         type: text
         relation: user
         valueFrom: username_str
+        searchable: false
+        sortable: false
+    created_at:
+        label: 'theone74.telegram::lang.lists.created_at'
+        type: datetime
+        searchable: false
+        sortable: true
+    upated_at:
+        label: 'theone74.telegram::lang.lists.upated_at'
+        type: datetime
+        searchable: false
+        sortable: true
+        invisible: true
     control:
         label: 'theone74.telegram::lang.lists.control'
         type: partial
         cssClass: 'column-button nolink'
+        sortable: false
+        searchable: false

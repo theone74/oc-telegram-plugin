@@ -7,13 +7,16 @@ columns:
     username:
         label: 'theone74.telegram::lang.lists.username'
         type: text
-        searchable: true
+        searchable: false
+        sortable: false
         relation: user
         valueFrom: username_str
     chat:
         label: 'theone74.telegram::lang.lists.chat'
         type: text
         relation: chat
+        sortable: false
+        searchable: false
         valueFrom: listTitle
     text:
         label: 'theone74.telegram::lang.lists.text'

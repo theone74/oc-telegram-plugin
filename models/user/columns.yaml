@@ -15,3 +15,14 @@ columns:
         type: text
         searchable: false
         sortable: false
+    created_at:
+        label: 'theone74.telegram::lang.lists.created_at'
+        type: datetime
+        searchable: false
+        sortable: true
+    upated_at:
+        label: 'theone74.telegram::lang.lists.upated_at'
+        type: datetime
+        searchable: false
+        sortable: true
+        invisible: true
