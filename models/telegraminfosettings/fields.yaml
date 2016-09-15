@@ -64,3 +64,15 @@ tabs:
               admin:
                 label: 'theone74.telegram::lang.settings.user_id'
                 type: dropdown 
+
+        botan_token:
+            label: 'theone74.telegram::lang.settings.botan_token'
+            oc.commentPosition: ''
+            commentHtml: 1
+            comment: 'Use <a href="https://telegram.me/Botaniobot">@Botaniobot</a> to generate token and get analytics'
+            span: auto
+            placeholder: 'theone74.telegram::lang.settings.botan_placeholder'
+            disabled: 0
+            required: 0
+            type: text
+            tab: 'theone74.telegram::lang.settings.botan_tab'

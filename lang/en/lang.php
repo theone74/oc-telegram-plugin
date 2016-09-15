@@ -48,5 +48,9 @@
         'db_encoding' => 'Db encoding',
         'db_encoding_utf8' => 'utf8 (Default)',
         'db_encoding_utf8mb4' => 'utf8mb4',
+		'botan_token' => 'Botan.io token',
+		'botan_tab' => 'Botan.io',
+		'botan_placeholder' => 'GAX8YDgkVzXJrFmTbf1vXU34bD_rZUB7',
+
     ]
 ];

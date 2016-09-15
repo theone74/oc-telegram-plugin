@@ -88,6 +88,12 @@ extends \Longman\TelegramBot\Telegram
             // TODO
             self::$_instance->enableMySQL($mysql_credentials, 'theone74_telegram_', self::$_encoding);
 
+			// batan.io
+			if ($token = TelegramInfoSettings::instance()->get('botan_token')){
+            	self::$_instance->enableBotan($token);
+			}
+
+			// enable admins
 			$admins = [];
 			foreach(TelegramInfoSettings::instance()->get('admins') as $i) {
 				$admins[] = $i['admin'];
