@@ -50,10 +50,14 @@ extends \Longman\TelegramBot\Telegram
 		$which = ['System'];
 		($this->isAdmin()) && $which[] = 'Admin';
 		$which[] = 'User';
+		
+		$command = explode('_', $command);
+		$command = array_map(array($this, 'ucfirstUnicode'), $command);
+		$command = implode('', $command);
 
 		foreach ($this->commands_namespaces as $namespace) {
 			foreach ($which as $auth) {
-				$command_namespace = $namespace . '\\' . $auth . 'Commands\\' . $this->ucfirstUnicode($command) . 'Command';
+				$command_namespace = $namespace . '\\' . $auth . 'Commands\\' . $command . 'Command';
 				if (class_exists($command_namespace)) {
 					return new $command_namespace($this, $this->update);
 				}
