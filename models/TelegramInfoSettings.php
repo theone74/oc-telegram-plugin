@@ -1,17 +1,21 @@
 <?php namespace TheOne74\Telegram\Models;
-
+/**
+ * This file is part of the Telegram plugin for OctoberCMS.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * (c) Anton Romanov <iam+octobercms@theone74.ru>
+ */
+ 
 use Model;
 use Flash;
 use Config;
 use TheOne74\Telegram\Classes\TelegramApi;
 use TheOne74\Telegram\Models\User;
-// use \Longman\TelegramBot\Telegram;
-
-
-
 
 /**
-* TelegramInfoSettings Model
+ * TelegramInfoSettings Model
  */
 class TelegramInfoSettings extends Model
 {

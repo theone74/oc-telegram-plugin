@@ -1,5 +1,13 @@
 <?php namespace TheOne74\Telegram\Controllers;
-
+/**
+ * This file is part of the Telegram plugin for OctoberCMS.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * (c) Anton Romanov <iam+octobercms@theone74.ru>
+ */
+ 
 use Backend\Classes\Controller;
 use BackendMenu;
 

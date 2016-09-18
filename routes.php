@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * This file is part of the Telegram plugin for OctoberCMS.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * (c) Anton Romanov <iam+octobercms@theone74.ru>
+ */
+ 
 use TheOne74\Telegram\Classes\TelegramApi;
 use \Longman\TelegramBot\Request;
 use \Longman\TelegramBot\Exception\TelegramException;
