@@ -54,5 +54,8 @@
 		'botan_tab' => 'Botan.io',
 		'botan_placeholder' => 'GAX8YDgkVzXJrFmTbf1vXU34bD_rZUB7',
 
-    ]
+    ],
+	'error' => [
+		'cert_path_required' => 'Необходимо заполнить "Certificate file path".'
+	],
 ];

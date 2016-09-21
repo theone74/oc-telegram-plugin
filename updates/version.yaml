@@ -11,3 +11,5 @@
     - builder_table_create_theone74_telegram_telegram_update.php
     - builder_table_create_theone74_telegram_conversation.php
     - builder_table_create_theone74_telegram_botan_shortener.php
+1.0.2:
+    - Fix error message in settings

@@ -37,7 +37,9 @@ class TelegramInfoSettings extends Model
         'token'      => 'required|regex:/^[0-9]+:[a-z0-9\-_]+$/i'
     ];
 
-	public $customMessages = [];
+	public $customMessages = [
+		'cert_path.required_with_all' => 'theone74.telegram::lang.error.cert_path_required'
+	];
 
 	function unparse_url($parsed_url) {
 		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
