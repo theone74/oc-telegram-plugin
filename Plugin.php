@@ -40,7 +40,12 @@ class Plugin extends PluginBase
                 'label' => 'Telegram Chat',
                 'code'  => 'telechat',
                 'alias'  => 'telechat',
-            ]
+            ],
+            'TheOne74\Telegram\FormWidgets\CheckWebhook' => [
+                'label' => 'Telegram check webhook button',
+                'code'  => 'checkwebhook',
+                'alias'  => 'checkwebhook',
+            ],
         ];
     }
 

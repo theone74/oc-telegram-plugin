@@ -52,6 +52,10 @@ tabs:
                 utf8: 'theone74.telegram::lang.settings.db_encoding_utf8'
                 utf8mb4: 'theone74.telegram::lang.settings.db_encoding_utf8mb4'
             tab: 'theone74.telegram::lang.settings.bot_tab'
+        check_web_hook:
+            label: 'theone74.telegram::lang.settings.lbl_test_web_hook'
+            type: checkwebhook
+            tab: 'theone74.telegram::lang.settings.bot_tab'
 
         admins:
           label: 'theone74.telegram::lang.settings.admins_ids'

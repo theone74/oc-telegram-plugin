@@ -1,0 +1,9 @@
+<div>
+    <button  
+            class="btn btn-primary btn-lg"
+            data-control="popup"
+            data-handler="onCheckWebhook"
+    >
+        <?= isset($field->config['button']) ? $field->config['button'] : trans('theone74.telegram::lang.settings.btn_test_web_hook') ?>
+    </button>
+</div>

@@ -13,3 +13,5 @@
     - builder_table_create_theone74_telegram_botan_shortener.php
 1.0.2:
     - Fix error message in settings
+1.0.3:
+    - Check webhook button
