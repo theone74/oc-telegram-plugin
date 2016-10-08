@@ -1,8 +1,28 @@
 {
     "name": "theone74/telegram",
     "description": "Telegram bot api implementation",
-    "require": {
-        "longman/telegram-bot": "0.33"
+	"repositories": [
+        {
+            "type":"package",
+			"package": {
+				"name": "longman/php-telegram-bot",
+				"version":"0.35",
+				"source": {
+					"url": "https://github.com/theone74/php-telegram-bot.git",
+					"type": "git",
+					"reference":"master"
+				}
+			}
+        }
+    ],
+	"require": {
+        "longman/php-telegram-bot": "*",
+		"monolog/monolog": "^1.19"
+    },
+	"autoload": {
+        "psr-4": {
+            "Longman\\TelegramBot\\": "vendor/longman/php-telegram-bot/src/"
+        }
     },
     "authors": [
         {
