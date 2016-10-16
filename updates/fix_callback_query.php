@@ -18,10 +18,10 @@ class FixCallbackQuery extends Migration
     {
         Schema::table('theone74_telegram_callback_query', function($table)
         {
+            $table->dropForeign('theone74_telegram_callback_query_chat_id_foreign');
+
             $table->dropIndex('chat_id');
             $table->dropIndex('message_id');
-
-            $table->dropForeign('theone74_telegram_callback_query_chat_id_foreign');
 
             $table->dropColumn('chat_id');
             $table->dropColumn('message_id');
