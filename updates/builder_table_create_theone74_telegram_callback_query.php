@@ -1,4 +1,4 @@
-<?php namespace TheOne74\Test1\Updates;
+<?php namespace TheOne74\Telegram\Updates;
 /**
  * This file is part of the Telegram plugin for OctoberCMS.
  *

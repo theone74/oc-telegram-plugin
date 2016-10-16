@@ -15,3 +15,6 @@
     - Fix error message in settings
 1.0.3:
     - Check webhook button
+1.0.4:
+    - Add some columns
+    - fix_callback_query.php
