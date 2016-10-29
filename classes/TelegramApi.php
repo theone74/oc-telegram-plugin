@@ -108,7 +108,7 @@ extends \Longman\TelegramBot\Telegram
 			// enable admins
 			$admins = [];
 			foreach(TelegramInfoSettings::instance()->get('admins') as $i) {
-				$admins[] = $i['admin'];
+				$admins[] = intval($i['admin']);
 			}
 			self::$_instance->enableAdmins($admins);
         }
